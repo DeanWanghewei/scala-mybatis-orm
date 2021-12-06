@@ -92,11 +92,11 @@ object ProfileTest extends App {
     val resultSeq = select()  
   }
   
-  // Read 1.000.000 rows one by one
-  context.readOnly { implicit s =>
-    select.handle[TestBean] { context =>
-      val bean = context.getResultObject
-    }
-  }
+//  // Read 1.000.000 rows one by one
+//  context.readOnly { implicit s =>
+//    select.handle[TestBean] { context =>
+//      val bean = context.getResultObject
+//    }
+//  }
   
 }

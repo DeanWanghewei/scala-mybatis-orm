@@ -18,6 +18,8 @@ package org.mybatis.scala.samples.util
 import org.mybatis.scala.mapping._
 import org.mybatis.scala.session._
 
+import scala.collection.JavaConverters._
+
 object DBSampleData {
 
   val insertPerson = new Insert[java.util.Map[_,_]] {
@@ -48,8 +50,7 @@ object DBSampleData {
   
   def populate(implicit s : Session) = {
     
-    import scala.jdk.CollectionConverters._
-    
+
     insertGroup(Map("id" -> 1, "name" -> "Customers").asJava)
     insertGroup(Map("id" -> 2, "name" -> "Suppliers").asJava)
     insertGroup(Map("id" -> 3, "name" -> "Employees").asJava)
